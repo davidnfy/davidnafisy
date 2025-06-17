@@ -61,7 +61,7 @@ const Navbar = () => {
                     <button
                       key={item.name}
                       onClick={() => scrollToSection(item.id)}
-                      className={`px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300 ease-in-out flex items-center gap-2 transform hover:scale-105 ${
+                      className={`px-4 py-2 rounded-lg text-sm font-semibold transition-all duration-300 ease-in-out flex items-center gap-2 transform hover:scale-105 ${
                         isScrolled
                           ? 'text-gray-700 hover:text-blue-600 hover:bg-blue-50'
                           : 'text-white/90 hover:text-white hover:bg-white/20'
@@ -133,7 +133,7 @@ const Navbar = () => {
                     <button
                       key={item.name}
                       onClick={() => scrollToSection(item.id)}
-                      className="w-full flex items-center gap-4 px-4 py-4 text-left text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded-xl transition-all duration-300 ease-in-out text-lg transform hover:scale-105 hover:translate-x-2"
+                      className="w-full flex items-center gap-4 px-4 py-4 font-semibold text-left text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded-xl transition-all duration-300 ease-in-out text-lg transform hover:scale-105 hover:translate-x-2"
                       style={{ 
                         animationDelay: `${index * 100}ms`,
                         animation: isOpen ? 'slide-in-right 0.6s ease-out forwards' : 'none'
