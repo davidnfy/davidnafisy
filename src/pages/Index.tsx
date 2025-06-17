@@ -71,70 +71,70 @@ const Index = () => {
 
   // Skills data
   const skills = [
-    { 
-      name: 'HTML', 
-      logo: '/upload/html.png'
-    },
-    { 
-      name: 'CSS', 
-      logo: '/upload/css.png'
-    },
-    { 
-      name: 'JavaScript', 
-      logo: '/upload/js.jpeg'
-    },
-    { 
-      name: 'Bootstrap', 
-      logo: '/upload/bootstrap.png'
-    },
-    { 
-      name: 'PHP', 
-      logo: '/upload/php.png'
-    },
-    { 
-      name: 'MySQL', 
-      logo: '/upload/mysql.png'
-    },
-    { 
-      name: 'Github', 
-      logo: '/upload/github.png'
-    },
-    { 
-      name: 'Node JS', 
-      logo: '/upload/nodejs.png'
-    }
+      { 
+        name: 'HTML', 
+        logo: 'upload/html.png'
+      },
+      { 
+        name: 'CSS', 
+        logo: 'upload/css.png'
+      },
+      { 
+        name: 'JavaScript', 
+        logo: 'upload/js.jpeg'
+      },
+      { 
+        name: 'Bootstrap', 
+        logo: 'upload/bootstrap.png'
+      },
+      { 
+        name: 'PHP', 
+        logo: 'upload/php.png'
+      },
+      { 
+        name: 'MySQL', 
+        logo: 'upload/mysql.png'
+      },
+      { 
+        name: 'Github', 
+        logo: 'upload/github.png'
+      },
+      { 
+        name: 'Node JS', 
+        logo: 'upload/nodejs.png'
+      }
   ];
 
   // Projects data
   const projects = [
-    {
-      title: 'E-commerce Website',
-      description: 'E-commerce website with a system like other e-commerce platforms with CRUD features and Login/Registration.',
-      tech: ['HTML', 'CSS', 'JavaScript', 'PHP' ,'MySQL'],
-      image: '/upload/ecommerce.png',
-      repoUrl: 'https://github.com/Davidnfy/Ecommerce'
-    },
-    {
-      title: 'Event Organizer Website',
-      description: 'Website that organizes or creates a list of events',
-      tech: ['PHP', 'CSS', 'MySQL',],
-      image: '/upload/event.png',
-      repoUrl: 'https://github.com/Davidnfy/Event-Organizer-crud-'
-    },
-    {
-      title: 'Calculator',
-      description: 'Simple calculator',
-      tech: ['HTML', 'CSS', 'JavaScript',],
-      image: '/upload/kalkulator.png',
-      repoUrl: 'https://github.com/Davidnfy/Calculator'
-    },
-    {
-      title: 'Number guessing game',
-      description: 'A simple and easy number guessing game to avoid boredom.',
-      tech: ['HTML', 'CSS', 'JavaScript',],
-      image: '/upload/game-tebak-angka.png',
-      repoUrl: 'https://github.com/Davidnfy/game-tebak-angka'
-    }
+      {
+        title: 'E-commerce Website',
+        description: 'E-commerce website with a system like other e-commerce platforms with CRUD features and Login/Registration.',
+        tech: ['HTML', 'CSS', 'JavaScript', 'PHP' ,'MySQL'],
+        image: 'upload/ecommerce.png',
+        repoUrl: 'https://github.com/Davidnfy/Ecommerce'
+      },
+      {
+        title: 'Event Organizer Website',
+        description: 'Website that organizes or creates a list of events',
+        tech: ['PHP', 'CSS', 'MySQL',],
+        image: 'upload/event.png',
+        repoUrl: 'https://github.com/Davidnfy/Event-Organizer-crud-'
+      },
+      {
+        title: 'Calculator',
+        description: 'Simple calculator',
+        tech: ['HTML', 'CSS', 'JavaScript',],
+        image: 'upload/kalkulator.png',
+        repoUrl: 'https://github.com/Davidnfy/Calculator'
+      },
+      {
+        title: 'Number guessing game',
+        description: 'A simple and easy number guessing game to avoid boredom.',
+        tech: ['HTML', 'CSS', 'JavaScript',],
+        image: 'upload/game-tebak-angka.png',
+        repoUrl: 'https://github.com/Davidnfy/game-tebak-angka'
+      }
   ];
 
   // Auto-advance projects every 5 seconds
@@ -204,7 +204,7 @@ const Index = () => {
                   variant="outline" 
                   className="hover:bg-blue-50 hover:border-blue-500 transition-all duration-300 flex items-center gap-2"
                 >
-                  <img src="/upload/smp.png" alt="SMP Logo" className="h-6 w-6 object-cover rounded" />
+                  <img src="upload/smp.png" alt="SMP Logo" className="h-6 w-6 object-cover rounded" />
                   <span>
                     SMP Negeri 2 Dampit<br />
                     <small className="text-xs text-gray-500">2022 - 2024</small>
@@ -214,7 +214,7 @@ const Index = () => {
                   variant="outline" 
                   className="hover:bg-purple-50 hover:border-purple-500 transition-all duration-300 flex items-center gap-2"
                 >
-                  <img src="/upload/smk.png" alt="SMK Logo" className="h-6 w-6 object-cover rounded" />
+                  <img src="upload/smk.png" alt="SMK Logo" className="h-6 w-6 object-cover rounded" />
                   <span>
                     SMKN Negeri 5 Malang<br />
                     <small className="text-xs text-gray-500">2024 - Present</small>
@@ -226,11 +226,11 @@ const Index = () => {
             <div className="animate-slide-in-right">
               <div className="relative">
                 <div className="w-80 h-80 mx-auto bg-gradient-to-br from-blue-100 to-purple-100 rounded-full flex items-center justify-center shadow-xl border border-blue-200 transition-all duration-700 ease-out hover:scale-105 overflow-hidden">
-                  <img 
-                    src="/upload/david.jpg" 
-                    alt="Profile Image" 
-                    className="w-full h-full object-cover rounded-full transition-all duration-500 ease-out" 
-                  />
+                <img 
+                  src="upload/david.jpg" 
+                  alt="Profile Image" 
+                  className="w-full h-full object-cover rounded-full transition-all duration-500 ease-out" 
+                />
                 </div>
                 <div className="absolute inset-0 bg-gradient-to-br from-blue-200/20 to-purple-200/20 rounded-full animate-pulse"></div>
               </div>
@@ -420,7 +420,7 @@ const Index = () => {
       <footer className="py-8 px-4 border-t border-gray-200 bg-gray-50">
         <div className="max-w-6xl mx-auto text-center">
           <p className="text-gray-500 transition-all duration-300 ease-out">
-            © 2024 davidnfy. Crafted with ❤️ and modern web technologies.
+            © 2024 davidnfy.
           </p>
         </div>
       </footer>
