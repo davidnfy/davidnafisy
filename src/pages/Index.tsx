@@ -122,11 +122,11 @@ const Index = () => {
         repoUrl: 'https://github.com/Davidnfy/Event-Organizer-crud-'
       },
       {
-        title: 'Calculator',
-        description: 'Simple calculator',
-        tech: ['HTML', 'CSS', 'JavaScript',],
-        image: 'upload/kalkulator.png',
-        repoUrl: 'https://github.com/Davidnfy/Calculator'
+        title: 'Animals Organization Website',
+        description: 'website to manage animal data',
+        tech: ['PHP', 'CSS','MySQL',],
+        image: 'upload/animals.png',
+        repoUrl: 'https://github.com/Davidnfy/animals-organizer-data'
       },
       {
         title: 'Number guessing game',
