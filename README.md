@@ -1,15 +1,35 @@
-## Hi there 👋
-<!--
-**Davidnfy/davidnfy** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
+# 👋 Hi, I'm David Nafisy
 
-Here are some ideas to get you started:
+🎯 Full Stack Developer in the making | 🎮 Game Enthusiast  
+🌍 Based in Indonesia | 💻 Passionate about tech, creativity & building cool stuff
 
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
+## 🛠️ Tech Stack
+
+- 🌐 HTML | CSS | JavaScript | PHP
+- ⚛️ React.js | Next.js (sedang belajar)
+- 🔧 Node.js | Express | Laravel (sedang belajar)
+- 🗃️ MySQL | MongoDB
+- 🎮 Unity | C# (hobi game dev)
+
+## 📌 Currently Working On
+
+- 🚀 Membangun website e-commerce lengkap (login, transaksi, dashboard admin)
+- 🎨 Wedding website project dengan tema personal & penuh cerita
+- 🐾 App manajemen data hewan (frontend + backend)
+
+## 🧠 Learning & Goals
+
+- 🔐 Autentikasi yang aman (JWT, bcrypt)
+- 📱 Responsive UI/UX & TailwindCSS
+- 🧩 AI & interaktifitas dalam game
+
+## 📫 Let’s Connect
+
+- 📧 davidnafisy3@gmail.com
+- 🌐 [My Portfolio] (https://davidnfy.vercel.app/))
+- 🐙 [GitHub] (https://github.com/Davidnfy))
+
+---
+
+> “Code is like humor. When you have to explain it, it’s bad.” – Cory House
+
