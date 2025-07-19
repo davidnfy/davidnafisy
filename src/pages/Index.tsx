@@ -103,6 +103,11 @@ const Index = () => {
         name: 'Node JS', 
         logo: 'upload/nodejs.png'
       }
+      ,
+       { 
+        name: 'React JS', 
+        logo: 'upload/react.png'
+      }
   ];
 
   // Projects data
@@ -227,7 +232,7 @@ const Index = () => {
               <div className="relative">
                 <div className="w-80 h-80 mx-auto bg-gradient-to-br from-blue-100 to-purple-100 rounded-full flex items-center justify-center shadow-xl border border-blue-200 transition-all duration-700 ease-out hover:scale-105 overflow-hidden">
                 <img 
-                  src="upload/david.jpg" 
+                  src="upload/nafisy.png" 
                   alt="Profile Image" 
                   className="w-full h-full object-cover rounded-full transition-all duration-500 ease-out" 
                 />
