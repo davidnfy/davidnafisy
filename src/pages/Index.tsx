@@ -398,7 +398,7 @@ const Index = () => {
           <div className="flex flex-col sm:flex-row gap-6 justify-center items-center animate-slide-in-left mb-12">
             <Button size="lg" className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 text-lg font-semibold transition-all duration-300 ease-out hover:scale-105 hover:shadow-xl hover:shadow-blue-500/25 transform">
               <Mail className="mr-2 h-5 w-5" />
-              david.nafisy@gmail.com
+              mail.davidnafisy@gmail.com
             </Button>
             <div className="flex gap-4">
               <a href="https://github.com/Davidnfy" target="_blank" rel="noopener noreferrer">
