@@ -128,7 +128,7 @@ const Index = () => {
       },
       {
         title: 'Animals Organization Website',
-        description: 'website to manage animal data',
+        description: 'Website to manage animal data',
         tech: ['PHP', 'CSS','MySQL',],
         image: 'upload/animals.png',
         repoUrl: 'https://github.com/Davidnfy/animals-organizer-data'
