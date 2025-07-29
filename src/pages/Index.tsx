@@ -102,11 +102,14 @@ const Index = () => {
       { 
         name: 'Node JS', 
         logo: 'upload/nodejs.png'
-      }
-      ,
+      },
        { 
         name: 'React JS', 
         logo: 'upload/react.png'
+      },
+       { 
+        name: 'Figma', 
+        logo: 'upload/figma.png'
       }
   ];
 
@@ -122,21 +125,21 @@ const Index = () => {
       {
         title: 'Event Organizer Website',
         description: 'Website that organizes or creates a list of events',
-        tech: ['PHP', 'CSS', 'MySQL',],
+        tech: ['PHP', 'CSS', 'MySQL'],
         image: 'upload/event.png',
         repoUrl: 'https://github.com/Davidnfy/Event-Organizer-crud-'
       },
       {
         title: 'Animals Organization Website',
-        description: 'Website to manage animal data',
-        tech: ['PHP', 'CSS','MySQL',],
+        description: 'website to manage animal data',
+        tech: ['PHP', 'CSS','MySQL'],
         image: 'upload/animals.png',
         repoUrl: 'https://github.com/Davidnfy/animals-organizer-data'
       },
       {
         title: 'Number guessing game',
         description: 'A simple and easy number guessing game to avoid boredom.',
-        tech: ['HTML', 'CSS', 'JavaScript',],
+        tech: ['HTML', 'CSS', 'JavaScript'],
         image: 'upload/game-tebak-angka.png',
         repoUrl: 'https://github.com/Davidnfy/game-tebak-angka'
       }
@@ -200,7 +203,7 @@ const Index = () => {
               </p>
               <p className="text-lg text-gray-600 leading-relaxed transition-all duration-700 ease-out">
                I also enjoy playing both Mobile and PC games, such as Genshin Impact, Minecraft, Fortnite, PUBG Mobile, Valorant, GTA V (RP), and many more.
-                Currently, I only play PUBG Mobile and Valorant. Besides gaming, 
+                Currently, I only play Genshin Impact and Valorant. Besides gaming, 
                 I also like playing the keyboard/piano. 
                 I really enjoy accompanying any song with the piano/keyboard, as it is my favorite hobby.
               </p>
