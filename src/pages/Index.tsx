@@ -142,6 +142,13 @@ const Index = () => {
         tech: ['HTML', 'CSS', 'JavaScript'],
         image: 'upload/game-tebak-angka.png',
         repoUrl: 'https://github.com/Davidnfy/game-tebak-angka'
+      },
+      {
+        title: 'Website DompetKu',
+        description: 'A simple and easy money management website.',
+        tech: ['React', 'CSS', 'Supabase'],
+        image: 'upload/dompetku.jpg',
+        repoUrl: 'https://github.com/davidnfy/DompetKu'
       }
   ];
 
