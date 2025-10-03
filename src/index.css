@@ -176,3 +176,51 @@ html {
   transform: translateY(-8px) scale(1.02);
   box-shadow: 0 20px 40px rgba(59, 130, 246, 0.2);
 }
+
+/* Morphing Text Animation */
+@keyframes morph-glow {
+  0%, 100% {
+    text-shadow:
+      0 0 5px rgba(6, 182, 212, 0.4),
+      0 0 10px rgba(6, 182, 212, 0.3),
+      0 0 15px rgba(6, 182, 212, 0.2);
+  }
+  50% {
+    text-shadow:
+      0 0 8px rgba(59, 130, 246, 0.5),
+      0 0 16px rgba(59, 130, 246, 0.4),
+      0 0 24px rgba(59, 130, 246, 0.2);
+  }
+}
+
+@keyframes morph-float {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes morph-fade {
+  0%, 100% {
+    opacity: 0.9;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+.morphing-text {
+  animation:
+    morph-glow 8s ease-in-out infinite,
+    morph-float 6s ease-in-out infinite,
+    morph-fade 6s ease-in-out infinite;
+  position: relative;
+  display: inline-block;
+  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  font-size: 1.5rem; /* Make the font smaller */
+}

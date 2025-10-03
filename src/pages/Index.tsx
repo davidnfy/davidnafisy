@@ -143,13 +143,6 @@ const Index = () => {
         image: 'upload/game-tebak-angka.png',
         repoUrl: 'https://github.com/Davidnfy/game-tebak-angka'
       },
-      {
-        title: 'Website DompetKu',
-        description: 'A simple and easy money management website.',
-        tech: ['React', 'CSS', 'Supabase'],
-        image: 'upload/dompetku.jpg',
-        repoUrl: 'https://github.com/davidnfy/DompetKu'
-      }
   ];
 
   // Auto-advance projects every 5 seconds
@@ -179,7 +172,7 @@ const Index = () => {
             <h1 className="text-4xl sm:text-6xl md:text-8xl font-bold mb-4 text-white transform transition-all duration-1000 ease-out">
               Hello, I'm David
             </h1>
-            <div className="text-2xl sm:text-4xl md:text-6xl font-bold mb-6 h-16 sm:h-20 flex items-center justify-center">
+            <div className="text-lg sm:text-2xl md:text-4xl font-bold mb-6 h-16 sm:h-20 flex items-center justify-center">
               <span className="inline-block overflow-hidden whitespace-nowrap bg-gradient-to-r from-yellow-400 via-pink-500 to-red-500 bg-clip-text text-transparent gradient-animate relative min-w-[280px] sm:min-w-[400px] text-center">
                 {typedText}
                 <span className="absolute -right-1 top-0 w-1 h-full bg-blue-300 animate-pulse"></span>
@@ -408,7 +401,7 @@ const Index = () => {
           <div className="flex flex-col sm:flex-row gap-6 justify-center items-center animate-slide-in-left mb-12">
             <Button size="lg" className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 text-lg font-semibold transition-all duration-300 ease-out hover:scale-105 hover:shadow-xl hover:shadow-blue-500/25 transform">
               <Mail className="mr-2 h-5 w-5" />
-              mail.davidnafisy@gmail.com
+              davidnafisy3@gmail.com
             </Button>
             <div className="flex gap-4">
               <a href="https://github.com/Davidnfy" target="_blank" rel="noopener noreferrer">
