@@ -1,13 +1,14 @@
-import { useState, useEffect } from 'react';
+  import { useState, useEffect, useRef } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import Navbar from '@/components/Navbar';
-import { 
-  Code, 
-  Mail, 
-  Github, 
-  Linkedin, 
+import useIntersectionObserver from '@/hooks/useIntersectionObserver';
+import {
+  Code,
+  Mail,
+  Github,
+  Linkedin,
   Instagram,
   GraduationCap,
   BookOpen
@@ -69,50 +70,6 @@ const Index = () => {
     return () => clearTimeout(timer);
   }, [typedText, isDeleting, currentTextIndex, isPaused]);
 
-  // Skills data
-  const skills = [
-      { 
-        name: 'HTML', 
-        logo: 'upload/html.png'
-      },
-      { 
-        name: 'CSS', 
-        logo: 'upload/css.png'
-      },
-      { 
-        name: 'JavaScript', 
-        logo: 'upload/js.jpeg'
-      },
-      { 
-        name: 'Bootstrap', 
-        logo: 'upload/bootstrap.png'
-      },
-      { 
-        name: 'PHP', 
-        logo: 'upload/php.png'
-      },
-      { 
-        name: 'MySQL', 
-        logo: 'upload/mysql.png'
-      },
-      { 
-        name: 'Github', 
-        logo: 'upload/github.png'
-      },
-      { 
-        name: 'Node JS', 
-        logo: 'upload/nodejs.png'
-      },
-       { 
-        name: 'React JS', 
-        logo: 'upload/react.png'
-      },
-       { 
-        name: 'Figma', 
-        logo: 'upload/figma.png'
-      }
-  ];
-
   // Projects data
   const projects = [
       {
@@ -153,6 +110,16 @@ const Index = () => {
 
     return () => clearInterval(interval);
   }, [projects.length]);
+
+  // Refs for scroll-triggered animations
+  const aboutRef = useRef<HTMLDivElement>(null);
+  const projectsRef = useRef<HTMLDivElement>(null);
+  const contactRef = useRef<HTMLDivElement>(null);
+
+  // Intersection observers for scroll animations
+  const isAboutVisible = useIntersectionObserver(aboutRef, { threshold: 0.1 });
+  const isProjectsVisible = useIntersectionObserver(projectsRef, { threshold: 0.1 });
+  const isContactVisible = useIntersectionObserver(contactRef, { threshold: 0.1 });
 
   return (
     <div className="min-h-screen bg-white text-gray-800 overflow-hidden scroll-smooth">
@@ -245,25 +212,7 @@ const Index = () => {
             </div>
           </div>
 
-          {/* Skills Section */}
-          <div className="text-center">
-            <div className="flex flex-wrap justify-center items-center gap-8">
-              {skills.map((skill, index) => (
-                <div key={skill.name} className="group animate-fade-in flex flex-col items-center gap-2 p-3 transition-all duration-500 ease-out hover:scale-110 hover:-translate-y-2" style={{ animationDelay: `${index * 0.1}s` }}>
-                  <div className="w-8 h-8 flex items-center justify-center">
-                    <img 
-                      src={skill.logo} 
-                      alt={`${skill.name} logo`} 
-                      className="w-6 h-6 object-contain transition-all duration-500 ease-out group-hover:scale-125 filter drop-shadow-lg" 
-                    />
-                  </div>
-                  <span className="text-xs font-medium text-gray-700 group-hover:text-blue-600 transition-all duration-300 ease-out text-center">
-                    {skill.name}
-                  </span>
-                </div>
-              ))}
-            </div>
-          </div>
+
         </div>
       </section>
 
