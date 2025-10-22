@@ -147,10 +147,11 @@ const Index = () => {
             </div>
           </div>
           
-          <p className="text-lg sm:text-xl md:text-2xl text-blue-100 mb-8 leading-relaxed animate-slide-in-left transition-all duration-1000 ease-out px-4" style={{ animationDelay: '1s' }}>
-           Expert in building complete web applications (front-end & back-end)<br className="hidden sm:block" />
-            and creating games from concept to playable.
-          </p>
+          <p className="text-lg sm:text-xl md:text-2xl text-blue-100 mb-8 leading-relaxed px-4">
+  Expert in building complete web applications (front-end & back-end)<br className="hidden sm:block" />
+  and creating games from concept to playable.
+</p>
+
         </div>
       </section>
 
