@@ -1,35 +1,49 @@
-# 👋 Hi, I'm David Nafisy
+# Personal Profile Website
 
-🎯 Full Stack Developer in the making | 🎮 Game Enthusiast  
-🌍 Based in Indonesia | 💻 Passionate about tech, creativity & building cool stuff
+## Description
+This is a personal profile website built using Next.js. It showcases information about me, including my projects, education, and contact details. The website is fully responsive and includes smooth scrolling for navigation.
 
-## 🛠️ Tech Stack
+## Features
+- **Responsive Design**: Optimized for both desktop and mobile devices.
+- **Smooth Scrolling**: Navigation links provide a smooth scrolling experience.
+- **Projects Section**: Displays a grid of projects with descriptions and links.
+- **Footer Links**: Includes links to Home, About, Projects, and Contact sections.
 
-- 🌐 HTML | CSS | JavaScript | PHP
-- ⚛️ React.js | Next.js (sedang belajar)
-- 🔧 Node.js | Express | Laravel (sedang belajar)
-- 🗃️ MySQL | MongoDB
-- 🎮 Unity | C# (hobi game dev)
+## Technologies Used
+- **Next.js**: React framework for building the website.
+- **CSS**: Custom styles for layout and responsiveness.
+- **Font Awesome**: Icons for social links.
 
-## 📌 Currently Working On
+## Installation
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/davidnfy/davidnafisy.git
+   ```
+2. Navigate to the project directory:
+   ```bash
+   cd davidnafisy
+   ```
+3. Install dependencies:
+   ```bash
+   npm install
+   ```
+4. Start the development server:
+   ```bash
+   npm run dev
+   ```
 
-- 🚀 Membangun website e-commerce lengkap (login, transaksi, dashboard admin)
-- 🎨 Wedding website project dengan tema personal & penuh cerita
-- 🐾 App manajemen data hewan (frontend + backend)
+## Usage
+- Open the website in your browser.
+- Navigate through sections using the navbar or footer links.
+- View projects and contact details.
 
-## 🧠 Learning & Goals
+## License
+This project is licensed under the MIT License.
 
-- 🔐 Autentikasi yang aman (JWT, bcrypt)
-- 📱 Responsive UI/UX & TailwindCSS
-- 🧩 AI & interaktifitas dalam game
+## Author
+**David Nafisy**
 
-## 📫 Let’s Connect
-
-- 📧 davidnafisy3@gmail.com
-- 🌐 [My Portfolio] (https://davidnfy.vercel.app/))
-- 🐙 [GitHub] (https://github.com/Davidnfy))
-
----
-
-> “Code is like humor. When you have to explain it, it’s bad.” – Cory House
-
+Connect with me:
+- [GitHub](https://github.com/davidnfy)
+- [LinkedIn](https://www.linkedin.com/in/davidnafisy/)
+- [Instagram](https://www.instagram.com/davidnfy/)
