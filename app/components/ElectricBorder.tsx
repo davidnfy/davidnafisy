@@ -1,12 +1,22 @@
-import { useEffect, useId, useLayoutEffect, useRef } from 'react';
+import { ReactNode, CSSProperties, useEffect, useId, useLayoutEffect, useRef } from 'react';
 import './ElectricBorder.css';
 
-const ElectricBorder = ({ children, color = '#7df9ff', speed = 1, chaos = 0.5, thickness = 2, className, style }) => {
+interface ElectricBorderProps {
+  children: ReactNode;
+  color?: string;
+  speed?: number;
+  chaos?: number;
+  thickness?: number;
+  className?: string;
+  style?: CSSProperties;
+}
+
+const ElectricBorder = ({ children, color = '#7df9ff', speed = 1, chaos = 0.5, thickness = 2, className, style }: ElectricBorderProps) => {
   const rawId = useId().replace(/[:]/g, '');
   const filterId = `turbulent-displace-${rawId}`;
-  const svgRef = useRef(null);
-  const rootRef = useRef(null);
-  const strokeRef = useRef(null);
+  const svgRef = useRef<SVGSVGElement>(null);
+  const rootRef = useRef<HTMLDivElement>(null);
+  const strokeRef = useRef<HTMLDivElement>(null);
 
   const updateAnim = () => {
     const svg = svgRef.current;
@@ -49,8 +59,10 @@ const ElectricBorder = ({ children, color = '#7df9ff', speed = 1, chaos = 0.5, t
 
     requestAnimationFrame(() => {
       [...dyAnims, ...dxAnims].forEach(a => {
+        // @ts-ignore
         if (typeof a.beginElement === 'function') {
           try {
+            // @ts-ignore
             a.beginElement();
           } catch {
             console.warn('ElectricBorder: beginElement failed, this may be due to a browser limitation.');
