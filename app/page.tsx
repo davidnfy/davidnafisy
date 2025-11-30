@@ -95,28 +95,38 @@ function useTypingAnimation() {
     let wordIndex = 0;
     let charIndex = 0;
     let isDeleting = false;
+    let rafId: number;
+    let lastTime = 0;
+    let delay = 0;
 
-    const type = () => {
+    const type = (now: number) => {
       if (!typingElement) return;
-
-      const currentWord = words[wordIndex];
-      const visibleText = isDeleting
-        ? currentWord.substring(0, charIndex--)
-        : currentWord.substring(0, charIndex++);
-
-      typingElement.textContent = visibleText;
-
-      if (!isDeleting && charIndex === currentWord.length) {
-        setTimeout(() => (isDeleting = true), 1500);
-      } else if (isDeleting && charIndex === 0) {
-        isDeleting = false;
-        wordIndex = (wordIndex + 1) % words.length;
+      if (!lastTime) lastTime = now;
+      const elapsed = now - lastTime;
+      // Use longer delay for mobile (reduce animation frequency)
+      const baseDelay = window.innerWidth < 600 ? 120 : 70;
+      if (elapsed > baseDelay + delay) {
+        const currentWord = words[wordIndex];
+        const visibleText = isDeleting
+          ? currentWord.substring(0, charIndex--)
+          : currentWord.substring(0, charIndex++);
+        typingElement.textContent = visibleText;
+        if (!isDeleting && charIndex === currentWord.length) {
+          delay = 1000;
+          isDeleting = true;
+        } else if (isDeleting && charIndex === 0) {
+          delay = 300;
+          isDeleting = false;
+          wordIndex = (wordIndex + 1) % words.length;
+        } else {
+          delay = 0;
+        }
+        lastTime = now;
       }
-
-      setTimeout(type, isDeleting ? 100 : 150);
+      rafId = requestAnimationFrame(type);
     };
-
-    type();
+    rafId = requestAnimationFrame(type);
+    return () => cancelAnimationFrame(rafId);
   }, []);
 }
 
@@ -200,7 +210,6 @@ export default function HomePage() {
             <h1>David Nafisy</h1>
           </div>
           <div className="icon-container">
-            {/* Icons removed as per user request */}
           </div>
           <div className="hrrr">
             <hr />
@@ -233,7 +242,7 @@ export default function HomePage() {
             {/* Electric border for about image - responsive */}
             <div style={{ width: '100%', maxWidth: 400, display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
               <ElectricBorder color="#0000FF" speed={1} chaos={0.5} thickness={2} style={{ borderRadius: '50%', width: '100%', aspectRatio: '1 / 1', maxWidth: 400, maxHeight: 400, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                <Image src="/upload/david.png" alt="David Nafisy" width={400} height={400} style={{ borderRadius: '50%', width: '100%', height: '100%', objectFit: 'cover' }} />
+                <Image src="/upload/david.png" alt="David Nafisy" width={400} height={400} style={{ borderRadius: '50%', width: '100%', height: '100%', objectFit: 'cover' }} loading="lazy" />
               </ElectricBorder>
             </div>
           </div>
