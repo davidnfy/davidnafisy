@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import ProjectCard from "./components/ProjectCard";
+import ElectricBorder from "./components/ElectricBorder"; // Import ElectricBorder component
 
 type Project = {
   image: string;
@@ -120,13 +121,12 @@ function useTypingAnimation() {
 }
 
 export default function HomePage() {
-  const [menuOpen, setMenuOpen] = useState(false);
   useLandingInteractions();
   useTypingAnimation();
 
   return (
     <>
-      <header className="header-list">
+      <header>
         <div className="div-list">
           <ul className="ul-list">
             <li className="active">
@@ -143,14 +143,6 @@ export default function HomePage() {
             </li>
           </ul>
         </div>
-        <nav className={`mobile-menu${menuOpen ? " open" : ""}`}>
-          <ul>
-            <li><a href="#home" onClick={() => setMenuOpen(false)}>Home</a></li>
-            <li><a href="#about" onClick={() => setMenuOpen(false)}>About</a></li>
-            <li><a href="#project" onClick={() => setMenuOpen(false)}>Projects</a></li>
-            <li><a href="#contact" onClick={() => setMenuOpen(false)}>Contact</a></li>
-          </ul>
-        </nav>
       </header>
 
       <main id="main-page" className="visible">
@@ -238,7 +230,12 @@ export default function HomePage() {
                 ))}
               </div>
             </div>
-            <Image src="/upload/david.png" alt="David Nafisy" width={400} height={400} />
+            {/* Electric border for about image - responsive */}
+            <div style={{ width: '100%', maxWidth: 400, display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+              <ElectricBorder color="#0000FF" speed={1} chaos={0.5} thickness={2} style={{ borderRadius: '50%', width: '100%', aspectRatio: '1 / 1', maxWidth: 400, maxHeight: 400, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                <Image src="/upload/david.png" alt="David Nafisy" width={400} height={400} style={{ borderRadius: '50%', width: '100%', height: '100%', objectFit: 'cover' }} />
+              </ElectricBorder>
+            </div>
           </div>
         </section>
 
