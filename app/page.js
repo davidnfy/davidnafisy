@@ -239,7 +239,7 @@ export default function HomePage() {
                 <hr />
               </div>
               <div className="follow">
-                <p className="followw">Follow me:</p>
+                <p>Follow me:</p>
                 <ul>
                   <li>
                     <a href="https://github.com/davidnfy" target="_blank" rel="noopener noreferrer" title="GitHub">
@@ -272,8 +272,6 @@ export default function HomePage() {
           <p>ABOUT ME</p>
           <div className="title">
             <h1>David Nafisy</h1>
-          </div>
-          <div className="icon-container">
           </div>
           <div className="hrrr">
             <hr />
