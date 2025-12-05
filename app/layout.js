@@ -1,13 +1,11 @@
-import type { Metadata } from "next";
 import "./globals.css";
-import { ReactNode } from "react";
 
-export const metadata: Metadata = {
+export const metadata = {
   title: "David Nafisy",
   description: "Personal portfolio for David Nafisy built with Next.js 15.",
 };
 
-export default function RootLayout({ children }: { children: ReactNode }) {
+export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <head>

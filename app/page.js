@@ -1,21 +1,10 @@
 "use client";
 
 import Image from "next/image";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import ProjectCard from "./components/ProjectCard";
-import ElectricBorder from "./components/ElectricBorder"; // Import ElectricBorder component
 
-type Project = {
-  image: string;
-  title: string;
-  description: string;
-  skills: string[];
-  url: string;
-};
-
-const typingWords = ["Full Stack Developer", "UI/UX Designer", "Game Developer"];
-
-const projects: Project[] = [
+const projects = [
   {
     image: "/upload/event.png",
     title: "Event Organizer Website",
@@ -67,16 +56,15 @@ const education = [
 
 function useLandingInteractions() {
   useEffect(() => {
-    const navBar = document.querySelector<HTMLElement>(".header-list");
+    const navBar = document.querySelector(".header-list");
     let lastScrollTop = 0;
 
     const handleScroll = () => {
       const scrollTop = window.scrollY;
-      if (scrollTop > lastScrollTop && scrollTop > 50) {
+      if (scrollTop > lastScrollTop && scrollTop > 30) {
         navBar?.classList.add("navbar-hidden");
         navBar?.classList.remove("navbar-visible");
       } else if (scrollTop < lastScrollTop) {
-        // Scroll ke atas
         navBar?.classList.add("navbar-visible");
         navBar?.classList.remove("navbar-hidden");
       }
@@ -90,53 +78,129 @@ function useLandingInteractions() {
 
 function useTypingAnimation() {
   useEffect(() => {
-    const typingElement = document.querySelector<HTMLElement>(".cursor");
+    const typingElement = document.querySelector(".cursor");
     const words = ["Full Stack Developer", "UI/UX Designer", "Game Developer"];
     let wordIndex = 0;
     let charIndex = 0;
     let isDeleting = false;
-    let rafId: number;
-    let lastTime = 0;
-    let delay = 0;
+    let timeoutId;
 
-    const type = (now: number) => {
+    function type() {
       if (!typingElement) return;
-      if (!lastTime) lastTime = now;
-      const elapsed = now - lastTime;
-      // Use longer delay for mobile (reduce animation frequency)
-      const baseDelay = window.innerWidth < 600 ? 120 : 70;
-      if (elapsed > baseDelay + delay) {
-        const currentWord = words[wordIndex];
-        const visibleText = isDeleting
-          ? currentWord.substring(0, charIndex--)
-          : currentWord.substring(0, charIndex++);
-        typingElement.textContent = visibleText;
-        if (!isDeleting && charIndex === currentWord.length) {
-          delay = 1000;
-          isDeleting = true;
-        } else if (isDeleting && charIndex === 0) {
-          delay = 300;
-          isDeleting = false;
-          wordIndex = (wordIndex + 1) % words.length;
-        } else {
-          delay = 0;
-        }
-        lastTime = now;
+      const currentWord = words[wordIndex];
+      if (isDeleting) {
+        charIndex--;
+        typingElement.textContent = currentWord.substring(0, charIndex);
+      } else {
+        charIndex++;
+        typingElement.textContent = currentWord.substring(0, charIndex);
       }
-      rafId = requestAnimationFrame(type);
+      let delay = isDeleting ? 60 : 110;
+      if (!isDeleting && charIndex === currentWord.length) {
+        delay = 1200;
+        isDeleting = true;
+      } else if (isDeleting && charIndex === 0) {
+        isDeleting = false;
+        wordIndex = (wordIndex + 1) % words.length;
+        delay = 400;
+      }
+      timeoutId = setTimeout(type, delay);
+    }
+    type();
+    return () => clearTimeout(timeoutId);
+  }, []);
+}
+
+function useAutoProjectSlider() {
+  useEffect(() => {
+    const container = document.querySelector(".projects-container");
+    if (!container) return;
+
+    let animationId;
+    const speed = 5.0; // px per frame (~60px/s at 60fps)
+    let isPaused = false;
+
+    // Duplicate children once to create a seamless loop
+    if (!container.dataset.loopCloned) {
+      const originalItems = Array.from(container.children);
+      originalItems.forEach((item) => {
+        const clone = item.cloneNode(true);
+        clone.setAttribute("aria-hidden", "true");
+        container.appendChild(clone);
+      });
+      container.dataset.loopCloned = "true";
+    }
+
+    let halfWidth = container.scrollWidth / 2;
+
+    const step = () => {
+      if (isPaused) {
+        animationId = requestAnimationFrame(step);
+        return;
+      }
+      const maxScroll = container.scrollWidth - container.clientWidth;
+      if (maxScroll <= 0) {
+        animationId = requestAnimationFrame(step);
+        return;
+      }
+
+      const next = container.scrollLeft + speed;
+      container.scrollLeft = next >= halfWidth ? next - halfWidth : next;
+      animationId = requestAnimationFrame(step);
     };
-    rafId = requestAnimationFrame(type);
-    return () => cancelAnimationFrame(rafId);
+
+    const handleEnter = () => {
+      isPaused = true;
+    };
+
+    const handleLeave = () => {
+      isPaused = false;
+    };
+
+    const handlePointerDown = () => {
+      isPaused = true;
+    };
+
+    const handlePointerUp = () => {
+      isPaused = false;
+    };
+
+    container.addEventListener("mouseenter", handleEnter);
+    container.addEventListener("mouseleave", handleLeave);
+    container.addEventListener("pointerdown", handlePointerDown);
+    container.addEventListener("pointerup", handlePointerUp);
+    container.addEventListener("touchstart", handlePointerDown, { passive: true });
+    container.addEventListener("touchend", handlePointerUp, { passive: true });
+
+    const handleResize = () => {
+      halfWidth = container.scrollWidth / 2;
+      container.scrollLeft = container.scrollLeft % halfWidth;
+    };
+
+    window.addEventListener("resize", handleResize);
+    animationId = requestAnimationFrame(step);
+
+    return () => {
+      cancelAnimationFrame(animationId);
+      container.removeEventListener("mouseenter", handleEnter);
+      container.removeEventListener("mouseleave", handleLeave);
+      container.removeEventListener("pointerdown", handlePointerDown);
+      container.removeEventListener("pointerup", handlePointerUp);
+      container.removeEventListener("touchstart", handlePointerDown);
+      container.removeEventListener("touchend", handlePointerUp);
+      window.removeEventListener("resize", handleResize);
+    };
   }, []);
 }
 
 export default function HomePage() {
   useLandingInteractions();
   useTypingAnimation();
+  useAutoProjectSlider();
 
   return (
     <>
-      <header>
+      <header className="header-list navbar-visible">
         <div className="div-list">
           <ul className="ul-list">
             <li className="active">
@@ -239,11 +303,9 @@ export default function HomePage() {
                 ))}
               </div>
             </div>
-            {/* Electric border for about image - responsive */}
+            {/* Simple about image without electric border */}
             <div style={{ width: '100%', maxWidth: 400, display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-              <ElectricBorder color="#0000FF" speed={1} chaos={0.5} thickness={2} style={{ borderRadius: '50%', width: '100%', aspectRatio: '1 / 1', maxWidth: 400, maxHeight: 400, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                <Image src="/upload/david.png" alt="David Nafisy" width={400} height={400} style={{ borderRadius: '50%', width: '100%', height: '100%', objectFit: 'cover' }} loading="lazy" />
-              </ElectricBorder>
+              <Image src="/upload/david.png" alt="David Nafisy" width={400} height={400} style={{ borderRadius: '50%', width: '100%', height: '100%', objectFit: 'cover' }} loading="lazy" />
             </div>
           </div>
         </section>
@@ -255,14 +317,7 @@ export default function HomePage() {
           </div>
           <div className="projects-container">
             {projects.map((project, index) => (
-              <ProjectCard
-                key={index}
-                image={project.image}
-                title={project.title}
-                description={project.description}
-                tags={project.skills}
-                buttons={[{ label: "GitHub", url: project.url }]}
-              />
+              <ProjectCard key={index} image={project.image} title={project.title} url={project.url} />
             ))}
           </div>
         </section>
