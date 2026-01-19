@@ -48,6 +48,4 @@ Connect with me:
 - [GitHub](https://github.com/davidnfy)
 - [LinkedIn](https://www.linkedin.com/in/davidnafisy/)
 - [Instagram](https://www.instagram.com/davidnfy/)
-=======
 # davidnafisy
->>>>>>> 45c1a9969266ed1723350155e9209d05282bdad0
