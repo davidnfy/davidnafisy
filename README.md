@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # Personal Profile Website
 
 ## Description
