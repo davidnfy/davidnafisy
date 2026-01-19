@@ -11,6 +11,61 @@ html, body {
   overflow-x: hidden;
 }
 
+.loader-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #ffffff;
+  z-index: 9999;
+  opacity: 1;
+  transition: opacity 0.5s ease, visibility 0.5s ease;
+  visibility: visible;
+}
+
+.loader-container.hidden {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.loader {
+  width: 50px;
+  aspect-ratio: 1.154;
+  position: relative;
+  background: conic-gradient(from 120deg at 50% 64%,#0000, #1900ff 1deg 120deg,#0000 121deg);
+  animation: l27-0 1.5s infinite cubic-bezier(0.3,1,0,1);
+}
+
+.loader:before,
+.loader:after {
+  content:'';
+  position: absolute;
+  inset:0;
+  background:inherit;
+  transform-origin: 50% 66%;
+  animation: l27-1 1.5s infinite;
+}
+
+.loader:after {
+  --s:-1;
+}
+
+@keyframes l27-0 {
+   0%,30%      {transform: rotate(0)}
+   70%         {transform: rotate(120deg)}
+   70.01%,100% {transform: rotate(360deg)}
+}
+
+@keyframes l27-1 {
+   0%      {transform: rotate(calc(var(--s,1)*120deg)) translate(0)}
+   30%,70% {transform: rotate(calc(var(--s,1)*120deg)) translate(calc(var(--s,1)*-5px),10px)}
+   100%    {transform: rotate(calc(var(--s,1)*120deg)) translate(0)}
+}
+
 h1, h2, h3, h4, h5, h6, p, a, span, li, button, input, textarea {
    font-family: 'Poppins', sans-serif !important;
  }
@@ -184,7 +239,6 @@ h1, h2, h3, h4, h5, h6, p, a, span, li, button, input, textarea {
   transition: transform 0.4s cubic-bezier(0.4,0,0.2,1), opacity 0.3s;
   padding: 0;
   border: none;
-  box-shadow: none;
   justify-content: center;
   align-items: center;
   margin: 0 auto;
@@ -656,7 +710,15 @@ hr {
 
 @media (max-width: 768px) {
   header {
-    display: none;
+    display: none !important;
+  }
+
+  .header-list {
+    display: none !important;
+  }
+
+  .ul-list {
+    display: none !important;
   }
 
   .home,
