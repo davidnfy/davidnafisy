@@ -57,7 +57,31 @@ const education = [
 function useLandingInteractions() {
   useEffect(() => {
     const navBar = document.querySelector(".header-list");
+    const navLinks = document.querySelectorAll(".ul-list li");
+    const sections = document.querySelectorAll("section");
     let lastScrollTop = 0;
+
+    const updateActiveLink = () => {
+      let currentSection = "home";
+      const scrollTop = window.scrollY + 100; // offset for navbar height
+
+      sections.forEach((section) => {
+        const sectionTop = section.offsetTop;
+        const sectionBottom = sectionTop + section.offsetHeight;
+
+        if (scrollTop >= sectionTop && scrollTop < sectionBottom) {
+          currentSection = section.id;
+        }
+      });
+
+      navLinks.forEach((link) => {
+        link.classList.remove("active");
+        const href = link.querySelector("a").getAttribute("href");
+        if (href === `#${currentSection}`) {
+          link.classList.add("active");
+        }
+      });
+    };
 
     const handleScroll = () => {
       const scrollTop = window.scrollY;
@@ -69,9 +93,12 @@ function useLandingInteractions() {
         navBar?.classList.remove("navbar-hidden");
       }
       lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
+
+      updateActiveLink();
     };
 
     window.addEventListener("scroll", handleScroll);
+    updateActiveLink(); // Set initial active link
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 }
@@ -203,7 +230,7 @@ export default function HomePage() {
       <header className="header-list navbar-visible">
         <div className="div-list">
           <ul className="ul-list">
-            <li className="active">
+            <li>
               <a href="#home">Home</a>
             </li>
             <li>
