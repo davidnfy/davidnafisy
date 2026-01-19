@@ -792,7 +792,6 @@ hr {
     gap: 1.5rem;
   }
 
-  /* Keep projects horizontal slider on tablet/mobile */
   .projects-container {
     flex-direction: row !important;
     align-items: stretch;
@@ -882,24 +881,6 @@ hr {
   100% {
     border-color: transparent;
   }
-}
-
-.header-list.navbar-hidden {
-  position: fixed;
-  top: -100px;
-  transition: top 0.3s ease-in-out;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-}
-
-.header-list.navbar-visible {
-  position: fixed;
-  top: 0;
-  transition: top 0.3s ease-in-out;
-  width: 100%;
-  display: flex;
-  justify-content: center;
 }
 
 html {

@@ -63,7 +63,7 @@ function useLandingInteractions() {
 
     const updateActiveLink = () => {
       let currentSection = "home";
-      const scrollTop = window.scrollY + 100; // offset for navbar height
+      const scrollTop = window.scrollY + 100;
 
       sections.forEach((section) => {
         const sectionTop = section.offsetTop;
@@ -98,7 +98,7 @@ function useLandingInteractions() {
     };
 
     window.addEventListener("scroll", handleScroll);
-    updateActiveLink(); // Set initial active link
+    updateActiveLink();
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 }
@@ -144,10 +144,9 @@ function useAutoProjectSlider() {
     if (!container) return;
 
     let animationId;
-    const speed = 5.0; // px per frame (~60px/s at 60fps)
+    const speed = 5.0;
     let isPaused = false;
 
-    // Duplicate children once to create a seamless loop
     if (!container.dataset.loopCloned) {
       const originalItems = Array.from(container.children);
       originalItems.forEach((item) => {
@@ -227,24 +226,6 @@ export default function HomePage() {
 
   return (
     <>
-      <header className="header-list navbar-visible">
-        <div className="div-list">
-          <ul className="ul-list">
-            <li>
-              <a href="#home">Home</a>
-            </li>
-            <li>
-              <a href="#about">About</a>
-            </li>
-            <li>
-              <a href="#project">Projects</a>
-            </li>
-            <li>
-              <a href="#contact">Contact</a>
-            </li>
-          </ul>
-        </div>
-      </header>
 
       <main id="main-page" className="visible">
         <section className="home" id="home">
