@@ -391,7 +391,7 @@ export default function HomePage() {
               </a>
             </div>
           </div>
-          <p className="footer-copy">&copy; 2025 David. All Rights Reserved.</p>
+          <p className="footer-copy">&copy; 2026 David. All Rights Reserved.</p>
         </div>
       </footer>
     </>
