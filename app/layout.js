@@ -17,7 +17,7 @@ const montserrat = Montserrat({
 
 export const metadata = {
   title: "David Nafisy",
-  description: "Personal portfolio for David Nafisy built with Next.js 15.",
+  description: "Personal portfolio for David Nafisy built with Next.js 16.",
 };
 
 export default function RootLayout({ children }) {

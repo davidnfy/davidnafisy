@@ -309,7 +309,7 @@ export default function HomePage() {
                 ))}
               </div>
             </div>
-            {/* Simple about image without electric border */}
+            {}
             <div style={{ width: '100%', maxWidth: 400, display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
               <Image src="/upload/david.png" alt="David Nafisy" width={400} height={400} style={{ borderRadius: '50%', width: '100%', height: '100%', objectFit: 'cover' }} loading="lazy" />
             </div>
@@ -391,7 +391,7 @@ export default function HomePage() {
               </a>
             </div>
           </div>
-          <p className="footer-copy">&copy; 2025 David. All Rights Reserved.</p>
+          <p className="footer-copy">&copy; 2026 David. All Rights Reserved.</p>
         </div>
       </footer>
     </>

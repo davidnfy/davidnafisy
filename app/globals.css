@@ -407,7 +407,7 @@ hr {
   max-width: 180px;
   min-width: 60px;
   height: 3px;
-  background: #222;
+  background: #1900ff;
   border: none;
   margin: 0;
   border-radius: 2px;
@@ -478,8 +478,8 @@ hr {
 
 .c1:hover {
   transform: translateY(-6px) scale(1.03);
-  border-color: #ff3333;
-  background-color: #fff5f5;
+  border-color: #1900ff;
+  background-color: #ffffff;
   box-shadow: 0 4px 15px rgba(0,0,0,0.15);
   cursor: pointer;
 }
