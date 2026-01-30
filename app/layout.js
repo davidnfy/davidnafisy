@@ -1,6 +1,6 @@
 import "./globals.css";
 import { Montserrat, Poppins } from "next/font/google";
-import LoadingScreen from "./components/LoadingScreen";
+import ClientLayout from "./components/ClientLayout";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -33,8 +33,7 @@ export default function RootLayout({ children }) {
         />
       </head>
       <body className={poppins.className}>
-        <LoadingScreen />
-        {children}
+        <ClientLayout>{children}</ClientLayout>
       </body>
     </html>
   );

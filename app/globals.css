@@ -9,6 +9,9 @@ html, body {
   padding: 0;
   width: 100%;
   overflow-x: hidden;
+  /* Base colors so background/color can transition */
+  background-color: #ffffff;
+  color: #0f172a;
 }
 
 .loader-container {
@@ -885,4 +888,150 @@ hr {
 
 html {
   scroll-behavior: smooth;
+}
+
+/* Dark Mode Styles */
+html.dark {
+  color-scheme: dark;
+}
+
+html.dark,
+html.dark body {
+  background-color: #0f172a;
+  color: #e2e8f0;
+}
+
+html.dark .loader-container {
+  background: #0f172a;
+}
+
+html.dark .footer {
+  background: #1e293b;
+  box-shadow: 0 -2px 16px rgba(0,0,0,0.3);
+}
+
+html.dark .footer-logo,
+html.dark .footer-links li a,
+html.dark .footer-social a {
+  color: #e2e8f0;
+}
+
+html.dark .footer-links li a:hover,
+html.dark .footer-social a:hover {
+  color: #60a5fa;
+}
+
+html.dark .project-card {
+  box-shadow: 0 10px 24px rgba(0,0,0,0.4);
+}
+
+html.dark .project-card:hover {
+  box-shadow: 0 14px 28px rgba(0,0,0,0.5);
+}
+
+html.dark .ul-list li a {
+  color: #e2e8f0;
+}
+
+html.dark .ul-list li a:hover {
+  color: #60a5fa;
+}
+
+html.dark .ul-list li.active a,
+html.dark .ul-list li.active i {
+  color: #60a5fa;
+}
+
+html.dark .info-p,
+html.dark .info-p2 {
+  color: #cbd5e1;
+}
+
+html.dark .about p {
+  color: #cbd5e1;
+}
+
+html.dark .about img {
+  border-color: #475569;
+}
+
+html.dark .c1 {
+  border-color: #475569;
+  background-color: #1e293b;
+}
+
+html.dark .c1:hover {
+  border-color: #60a5fa;
+  background-color: #334155;
+  box-shadow: 0 4px 15px rgba(96, 165, 250, 0.2);
+}
+
+html.dark .project p {
+  color: #cbd5e1;
+}
+
+html.dark .contact p {
+  color: #cbd5e1;
+}
+
+html.dark .contact-item i {
+  color: #e2e8f0;
+}
+
+html.dark .social-link {
+  background: #334155;
+  color: #e2e8f0;
+}
+
+html.dark .social-link:hover {
+  color: #fff;
+}
+
+html.dark .social-link[href*="github"]:hover {
+  background: #1f2937;
+}
+
+html.dark .social-link[href*="linkedin"]:hover {
+  background: #1f2937;
+}
+
+html.dark .social-link[href*="instagram"]:hover {
+  background: #1f2937;
+}
+
+html.dark .follow ul a {
+  color: #e2e8f0;
+}
+
+html.dark .about .hrrr hr {
+  background: #60a5fa;
+}
+
+html.dark .cursor {
+  color: #e2e8f0;
+  border-right-color: #e2e8f0;
+}
+
+@keyframes blink-dark {
+  0% {
+    border-color: transparent;
+  }
+  50% {
+    border-color: #e2e8f0;
+  }
+  100% {
+    border-color: transparent;
+  }
+}
+
+html.dark .cursor {
+  animation: blink-dark 0.7s steps(2, start) infinite;
+}
+
+/* Theme transition helper - applied briefly while toggling themes */
+.theme-animate,
+.theme-animate * {
+  transition-property: background-color, color, border-color, box-shadow, fill, stroke;
+  transition-duration: 360ms;
+  transition-timing-function: ease;
 }
