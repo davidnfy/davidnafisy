@@ -255,7 +255,7 @@ export default function HomePage() {
                     </a>
                   </li>
                   <li>
-                    <a href="1272875106187608128" title="Placeholder">
+                    <a href="https://discord.com/users/1272875106187608128" title="Placeholder">
                       <i className="fa-brands fa-discord" />
                     </a>
                   </li>
@@ -309,7 +309,6 @@ export default function HomePage() {
                 ))}
               </div>
             </div>
-            {}
             <div style={{ width: '100%', maxWidth: 400, display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
               <Image src="/upload/david.png" alt="David Nafisy" width={400} height={400} style={{ borderRadius: '50%', width: '100%', height: '100%', objectFit: 'cover' }} loading="lazy" />
             </div>

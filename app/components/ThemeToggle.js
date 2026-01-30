@@ -5,7 +5,6 @@ import { useTheme } from '../context/ThemeContext';
 export default function ThemeToggle() {
   const { isDark, toggleTheme, isMounted } = useTheme();
 
-  // Jangan render sampai hydration selesai
   if (!isMounted) return null;
 
   const commonStyle = {

@@ -224,7 +224,6 @@ h1, h2, h3, h4, h5, h6, p, a, span, li, button, input, textarea {
   pointer-events: none;
   padding: 10px 0;
   background: transparent;
-  backdrop-filter: none;
   box-shadow: none;
 }
 .header-list .div-list,
@@ -622,58 +621,19 @@ hr {
 }
 
 .footer {
-  header {
-    display: none;
-  }
   overflow: hidden;
 }
 
-.footer-container {
-  max-width: 1200px;
-  margin: auto;
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-}
-
-.footer-logo {
-  font-family: 'Montserrat', sans-serif;
-  font-size: 26px;
-  margin: 0;
-}
-
 .footer-main {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
-  align-items: center;
-  gap: 16px;
-}
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+    align-items: center;
+    gap: 16px;
+  }
 
-.footer-brand {
-  text-align: left;
-}
-
-.footer-links {
-  list-style: none;
-  display: flex;
-  justify-content: center;
-  gap: 16px;
-  row-gap: 6px;
-  flex-wrap: wrap;
-  padding: 0;
-  margin: 0;
-}
-
-.footer-links li {
-  white-space: nowrap;
-}
-
-.footer-links li a {
-  color: #fff;
-  text-decoration: none;
-  font-weight: 500;
-  transition: color 0.3s ease;
-}
+  .footer-brand {
+    text-align: left;
+  }
 
 .footer-links li a:hover {
   color: #474af0;
@@ -1007,10 +967,6 @@ html.dark .about .hrrr hr {
   background: #60a5fa;
 }
 
-html.dark .cursor {
-  color: #e2e8f0;
-  border-right-color: #e2e8f0;
-}
 
 @keyframes blink-dark {
   0% {
@@ -1025,6 +981,8 @@ html.dark .cursor {
 }
 
 html.dark .cursor {
+  color: #e2e8f0;
+  border-right-color: #e2e8f0;
   animation: blink-dark 0.7s steps(2, start) infinite;
 }
 
