@@ -34,18 +34,18 @@ const projects = [
     url: "https://github.com/davidnfy/Game-Flappy-Bird",
   },
   {
-    image: "/upload/afterlight.png",
-    title: "Game After Light",
-    description: "After Light a game where the goal is to collect all the items quickly to get the lowest timer.",
-    skills: ["Construct 2"],
-    url: "https://github.com/davidnfy/Game-AfterLight",
-  },
-  {
     image: "/upload/todolist.png",
     title: "Todo List App",
     description: "Todo list web app that helps organize daily activities",
     skills: ["PHP", "Blade", "JS", "Laravel"],
     url: "https://github.com/davidnfy/Todo-List-App",
+  },
+  {
+    image: "/upload/absen-gereja.png",
+    title: "Absen Data Jemaat Gereja",
+    description: "Church congregation attendance data management website",
+    skills: ["PHP", "Blade", "JS", "Laravel"],
+    url: "https://github.com/davidnfy/absen-gereja",
   },
 ];
 
@@ -222,7 +222,6 @@ function useAutoProjectSlider() {
 export default function HomePage() {
   useLandingInteractions();
   useTypingAnimation();
-  useAutoProjectSlider();
 
   return (
     <>
