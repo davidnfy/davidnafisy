@@ -5,6 +5,7 @@ function ProjectCard({ image, title, url }) {
     <a className="project-card" href={url} target="_blank" rel="noopener noreferrer">
       <Image
         src={image}
+        alt={title}
         fill
         sizes="(max-width: 900px) 90vw, 520px"
         className="project-card__image"
