@@ -403,7 +403,7 @@ hr {
   transition: width 0.3s, margin 0.3s;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 1024px) {
   .about .hrrr {
     justify-content: center;
     max-width: 90vw;
@@ -473,6 +473,13 @@ hr {
   cursor: pointer;
 }
 
+
+.project p{
+  padding-bottom: 20px;
+  font-size: 13px;
+  color: rgb(50, 50, 50);
+}
+
 .project{
   margin: 100px auto 0 auto;
   max-width: 1100px;
@@ -497,6 +504,8 @@ hr {
 .project hr{
   width: 10%;
 }
+
+
 
 
 
@@ -764,6 +773,43 @@ hr {
     object-fit: cover;
   }
 
+  @media (max-width: 1024px) {
+  .projects-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+    padding: 16px;
+  }
+
+  .project-card {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+  }
+
+  .project-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+@media (max-width: 600px) {
+  .projects-container {
+    gap: 16px;
+    padding: 12px;
+  }
+
+  .project-card {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+  }
+
+  .project-card__overlay {
+    font-size: 0.85rem;
+    letter-spacing: 0.03em;
+  }
+}
+
   .about img {
     width: 100%;
     max-width: 220px;
@@ -837,7 +883,6 @@ html {
   scroll-behavior: smooth;
 }
 
-/* Dark Mode Styles */
 html.dark {
   color-scheme: dark;
 }
@@ -973,7 +1018,6 @@ html.dark .cursor {
   animation: blink-dark 0.7s steps(2, start) infinite;
 }
 
-/* Theme transition helper - applied briefly while toggling themes */
 .theme-animate,
 .theme-animate * {
   transition-property: background-color, color, border-color, box-shadow, fill, stroke;

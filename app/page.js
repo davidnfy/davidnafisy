@@ -7,44 +7,27 @@ import ProjectCard from "./components/ProjectCard";
 const projects = [
   {
     image: "/upload/event.png",
-    title: "Event Organizer Website",
-    description: "Website that easily manages event systems",
-    skills: ["PHP", "CSS"],
     url: "https://github.com/davidnfy/Event-Organizer-crud-",
   },
   {
     image: "/upload/animals.png",
-    title: "Animal Organizer Website",
-    description: "Pet Organizer Website that manages animal health.",
-    skills: ["PHP", "CSS"],
     url: "https://github.com/davidnfy/animals-organizer-data",
   },
   {
     image: "/upload/game-tebak-angka.png",
-    title: "Number Guessing Game Website",
-    description: "Simple Number Guessing Game Website.",
-    skills: ["HTML", "CSS", "JS"],
+
     url: "https://github.com/davidnfy/game-tebak-angka",
   },
   {
     image: "/upload/flappy-bird.png",
-    title: "Game Flappy Bird",
-    description: "Flappy Bird game that saves the player's score and has obstacles",
-    skills: ["Construct 3"],
     url: "https://github.com/davidnfy/Game-Flappy-Bird",
   },
   {
     image: "/upload/todolist.png",
-    title: "Todo List App",
-    description: "Todo list web app that helps organize daily activities",
-    skills: ["PHP", "Blade", "JS", "Laravel"],
     url: "https://github.com/davidnfy/Todo-List-App",
   },
   {
     image: "/upload/absen-gereja.png",
-    title: "Absen Data Jemaat Gereja",
-    description: "Church congregation attendance data management website",
-    skills: ["PHP", "Blade", "JS", "Laravel"],
     url: "https://github.com/davidnfy/absen-gereja",
   },
 ];
@@ -106,7 +89,7 @@ function useLandingInteractions() {
 function useTypingAnimation() {
   useEffect(() => {
     const typingElement = document.querySelector(".cursor");
-    const words = ["Full Stack Developer", "UI/UX Designer", "Game Developer"];
+    const words = ["Full Stack Developer", "UI/UX Designer", "Tech Enthusiast"];
     let wordIndex = 0;
     let charIndex = 0;
     let isDeleting = false;
@@ -230,12 +213,12 @@ export default function HomePage() {
         <section className="home" id="home">
           <div className="home-container">
             <div className="info-home">
-              <h3>Hi, I&apos;m David</h3>
+              <h3>Hi, I&apos;m David 🧑🏻‍💻✨</h3>
               <h3>
                 <span className="cursor"></span>
               </h3>
               <div className="info-p">
-                <p>I am a student and aspire to become a Full-Stack & Game Developer, and I enjoy new things like trying new technology and new games.</p>
+                <p>I am a student and aspire to become a Full-Stack, and I enjoy new things like trying new technology and new games.✨</p>
               </div>
               <div className="info-p2">
                 <p>
@@ -292,7 +275,7 @@ export default function HomePage() {
                   of that, I continue to study and hone my skills.
                 </p>
                 <p>
-                  Besides coding, I also enjoy playing games like Valorant, GTA V, Mobile Legends, and PUBG Mobile. I’m also passionate
+                  Besides coding, I also enjoy playing games like Valorant, GTA V,  Minecraft, and PUBG Mobile. I’m also passionate
                   about music — I love playing instruments like the piano and guitar in my free time.
                 </p>
               </div>
